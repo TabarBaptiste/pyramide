@@ -1,0 +1,149 @@
+@import url(//db.onlinewebfonts.com/c/84693c6ac1f359fe8a4ac49b69f492dd?family=Gotham+Light);
+@font-face {font-family : "Gotham Light" ;src : url("//db.onlinewebfonts.com/t/84693c6ac1f359fe8a4ac49b69f492dd.eot");src : url ("//db.onlinewebfonts.com/t/84693c6ac1f359fe8a4ac49b69f492dd.eot?#iefix") format ("embedded-opentype"), url ("//db.onlinewebfonts.com/t/84693c6ac1f359fe8a4ac49b69f492dd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/84693c6ac1f359fe8a4ac49b69f492dd.woff") format("woff"), url("//db.onlinewebfonts.com/t/84693c6ac1f359fe8a4ac49b69f492dd.ttf") format ("truetype"), url ("//db.onlinewebfonts.com/t/84693c6ac1f359fe8a4ac49b69f492dd.svg#Gotham Light") format ("svg");}
+
+/* @page {
+    size: 7in 9.25in;
+    margin: 27mm 16mm 27mm 16mm;
+} */
+
+body{
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 'Gotham', sans-serif;font-family: 'Gotham', sans-serif;    text-align: center;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.870);
+    color: white;
+    /*background-image: url(../images/img/questions.png);*/
+}
+.write{
+    width: 800px;
+    margin: 50 auto;
+}
+.reseau{
+    width: 1000px;
+    margin: 50 auto;
+}
+.gauche{
+    color: #FC4949;
+    font-weight: 400;
+}
+.milieu{
+    color: #4BA7F9;
+    font-weight: 400;
+}
+.droite{
+    color: #FFBD48;
+    font-weight: 400;
+}
+.trois{
+    font-size: 20px;
+    margin-bottom: 1px;
+}
+.tab{
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+div{
+    margin-bottom: 40px;
+}
+
+th{
+    padding: center;
+}
+.pp{
+    font-size: 20px;
+    padding-right: 20px;
+}
+ 
+r{
+    color: #3b5998;
+}
+r:hover{
+    color: white;
+}
+
+f{
+    background-color: #0077b5;
+}
+f:hover{
+    background-color: transparent;
+}
+iframe{
+    border-radius: 4%;
+}
+hr{
+    margin-top: 7.5%;
+}
+.logo{
+    height: 200px;
+    width: 200px;
+    margin-top: -10%;
+    margin-bottom: -5%;
+}
+.commentaire{
+    color: grey;
+    width: 50%;
+    margin-left: 25%
+}
+
+
+
+.glow-on-hover {
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    /*background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);*/
+    background: linear-gradient(45deg, #FC4949, #4BA7F9, #FFBD48);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0}
+}
