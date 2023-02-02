@@ -78,6 +78,12 @@ body {
   margin-top: 8%;
   margin-bottom: 8%;
   background-color: rgba(255, 255, 255, 0.7);
+
+  background-image: url('assets/images/img/logo.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: screen;
 }
 .card-body{
 	flex: 0.7 1 auto;

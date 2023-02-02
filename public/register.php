@@ -53,13 +53,14 @@
                         </div>
                         <!-- Mot de passe -->
                         <div class="form-group">
-                            <label for="password">Mot de passe :</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                </div>
-                                <input type="password" class="form-control" id="password" pattern="(?=.*\d)(?=.*[A-Z])[A-Za-z\d]{8,}" title="Le mot de passe doit contenir au moins 8 caractères, au moins 1 chiffre et au moins 1 caractère majuscule." placeholder="Votre mot de passe" name="password" required>
+                          <label for="password">Mot de passe :</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
+                            <input type="password" class="form-control" id="password" pattern="(?=.*\d)(?=.*[A-Z])[A-Za-z\d]{8,}" title="Le mot de passe doit contenir au moins 8 caractères, au moins 1 chiffre et au moins 1 caractère majuscule." placeholder="Votre mot de passe" name="password" required>
+                            <span id="password-visibility-toggle" class="password-visibility-toggle">👀</span>
+                          </div>
                         </div>
                         <!-- Confirmez le mot de passe -->
                         <div class="form-group">
@@ -113,7 +114,20 @@
                                 });
                             });
                         });
+                      </script>
+                      <script>
+                        const passwordInput = document.getElementById('password');
+                        const passwordVisibilityToggle = document.getElementById('password-visibility-toggle');
 
+                        passwordVisibilityToggle.addEventListener('click', function() {
+                          if (passwordInput.type === 'password') {
+                            passwordInput.type = 'text';
+                            passwordVisibilityToggle.textContent = '🙈';
+                          } else {
+                            passwordInput.type = 'password';
+                            passwordVisibilityToggle.textContent = '👀';
+                          }
+                        });
                       </script>
 
                         <!-- Se connecter -->
@@ -157,6 +171,12 @@ body {
   margin-top: 2%;
   margin-bottom: 8%;
   background-color: rgba(255, 255, 255, 0.7);
+
+  background-image: url('assets/images/img/logo.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: screen;
 }
 .card-header{
   margin-bottom: -5px;
@@ -232,5 +252,11 @@ body {
   transform: rotate(360deg) skew(15deg);
   text-decoration: none;
   font-size: 30px;
+}
+.password-visibility-toggle {
+  position: relative;
+  top: 9px;
+  left: 5px;
+  cursor: pointer;
 }
 </style>
