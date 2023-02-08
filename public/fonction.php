@@ -63,7 +63,8 @@ function ajoutUser($param){
 
     $emailExisteDeja = emailExisteDeja($param['email']);
     if ($emailExisteDeja) {
-        echo json_encode(array("status" => "error", "message" => "L'email est déjà utilisé."));
+        $_SESSION['flash'] = "L'email est déjà utilisé.";
+        header('Location: register.php');
         exit;
     }
 
@@ -127,6 +128,7 @@ function inscrireUtilisateur($user_id, $event_id) {
         $stmt->execute();
         $count = $stmt->fetchColumn();
         if ($count > 0) {
+            $_SESSION['flashMessage'] = "Vous êtes déjà inscrit à cet événement.";
             return "Vous êtes déjà inscrit à cet événement.";
         }
 
@@ -149,7 +151,14 @@ function inscrireUtilisateur($user_id, $event_id) {
         echo "Erreur: " . $e->getMessage();
     }
 }
-
+function getEventName($event_id) {
+    global $pdo;
+    $query = "SELECT nom FROM events WHERE id = :event_id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute(['event_id' => $event_id]);
+    $event = $stmt->fetch();
+    return get_object_vars($event)['nom'];
+}
 function utilisateurDejaInscrit($user_id, $event_id) {
     global $pdo;
     try {
@@ -223,6 +232,41 @@ function afficherProfil(){
         } catch (PDOException $e) {
             echo "Erreur : " . $e->getMessage();
         }
+    }
+}
+
+function affichEvents() {
+    global $pdo;
+    $query = 'SELECT * FROM events';
+    $prep = $pdo->prepare($query);
+    if ($prep->execute()) {
+        return $prep->fetchAll();
+    }
+    return false;
+}
+function idEvents($id){
+    global $pdo;
+    $query = 'SELECT * FROM events WHERE id=:id';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id', $id);
+    $prep->execute();
+    return $prep->fetch();
+}
+function updateEvents($param){
+    global $pdo;
+    try {
+        if(!isset($param['id'])) {
+            echo "L'ID n'est pas défini.";
+            return;
+        }        
+        $stmt = $pdo->prepare("UPDATE events SET nom = :nom, type = :type, date = :date WHERE id = :id");
+        $stmt->bindValue(':id', $param['id']);
+        $stmt->bindValue(':nom', $param['nom']);
+        $stmt->bindValue(':type', $param['type']);
+        $stmt->bindValue(':date', $param['date']);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Erreur: " . $e->getMessage();
     }
 }
 
@@ -307,4 +351,57 @@ function idUser($id){
     $prep->bindValue(':id', $id);
     $prep->execute();
     return $prep->fetch();
+}
+
+function creatNewsletter($param){
+    global $pdo;
+    $date = date('Y-m-d H:i:s');
+    $is_sent = isset($param['is_sent']) ? $param['is_sent'] : 0;
+    $query = "INSERT INTO newsletters (nom, content, created_at, is_sent) VALUES (:nom, :content, :created_at, :is_sent)";
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':nom', $param['nom']);
+    $prep->bindValue(':content', $param['content']);
+    $prep->bindValue(':created_at', $date);
+    $prep->bindValue(':is_sent', $is_sent, PDO::PARAM_BOOL);
+    $prep->execute();
+}
+
+
+function idMail(){
+    global $pdo;
+    $email = $_POST['email'];
+    $query = "SELECT id FROM users WHERE email = :email";
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':email', $email);
+    $prep->execute();
+    $result = $prep->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+        $id = $result['id'];
+        $param = [
+            'id' => $id,
+        ];
+        subscribeToNewsletter($param);
+    }
+}
+
+function subscribeToNewsletter($param) {
+    try {
+        global $pdo;
+        $query = "UPDATE users SET newsletter = 1 WHERE id = :id";
+        $prep = $pdo->prepare($query);
+        $prep->bindValue(':id', $param['id']);
+        $prep->execute();
+    } catch (PDOException $e) {
+        echo "Erreur: " . $e->getMessage();
+    }
+}
+
+function afficheNewsletters() {
+    global $pdo;
+    $query = 'SELECT * FROM newsletters';
+    $prep = $pdo->prepare($query);
+    if ($prep->execute()) {
+        return $prep->fetchAll();
+    }
+    return false;
 }

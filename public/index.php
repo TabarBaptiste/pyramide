@@ -10,8 +10,11 @@
         elseif (isset($_POST['delete'])){
             supprimerCompte($id);
         }
-        if ( isset($_POST['delete'])){
-            //header('Location: index.php');
+        elseif (isset($_POST['news'])){
+            creatNewsletter($_POST);
+        }
+        elseif (isset($_POST['subscribe'])){
+            idMail();
         }
         ?>
     </head>

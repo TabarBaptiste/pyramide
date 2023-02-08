@@ -29,6 +29,7 @@
                     <th>Prénom</th>
                     <th>email</th>
                     <th>Role</th>
+                    <th>nb évents</th>
                     <th>Update</th>
                 </tr>
                 <?php foreach ($users as $us): ?>
@@ -38,6 +39,7 @@
                     <td> <?php echo $us->prenom ?> </td>
                     <td> <?php echo $us->email ?> </td>
                     <td> <?php echo $us->role ?> </td>
+                    <td> <?php echo $us->nb_events ?> </td>
                     <td>
                         <a href="updateUser.php?id=<?php echo $us->id ?>"><button type="button">Modifier</button></a>
                     </td>

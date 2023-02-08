@@ -29,9 +29,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 exit;
             } else {
                 // Redirection vers la page d'authentification en cas d'erreur
-                //header('Location: authentification.php');
-                print_r($_POST);
-                echo "  Information incorrect";
+                header('Location: authentification.php');
+                //print_r($_POST);
+                //echo "  Information incorrect";
                 exit;
             }
         }

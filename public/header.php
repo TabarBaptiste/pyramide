@@ -72,6 +72,7 @@
                                         echo '<li><a href="logout.php">Se déconnecter</a></li>';
                                         if ($_SESSION['role']=='ROLE_ADMIN'){
                                             echo '<li><a href="listeUser.php">Afficher users</a></li>';
+                                            echo '<li><a href="listeEvents.php">Afficher events</a></li>';
                                         }
                                     } else {
                                         echo '<li><a href="authentification.php">Se connecter</a></li>';

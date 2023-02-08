@@ -9,7 +9,7 @@
                         <div class="features-content">
                             <h4>Faire un don</h4>
                             <p>Vous pouvez nous adier à financer nos projets, afin d'améliorer la qualité de vie des jeunes de Laval</p>
-                            <a href="assets\sous_index\propos_nous.php" class="text-button-icon">
+                            <a href="propos_nous.php" class="text-button-icon">
                                 En savoir plus<i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
@@ -46,9 +46,9 @@
                         </div>
                         <div class="features-content">
                             <h4>Code QR PayPal</h4>
-                            <p>CODE QR A PLACER</p>
-                            <a href="#" class="text-button-icon">
-                            </a>
+                            <a href="">
+                                <img class="paypal_code" src="assets/images/img/qr_code.png" alt="">
+                            </a>    
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,10 @@
       text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
       font-size: 20px;
     }
-
+    .paypal_code{
+        height: 120px;
+        width: 120px;
+    }
     </style>
 
 <!--

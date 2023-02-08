@@ -10,13 +10,13 @@
 
     <body>
 
-    <a href="../../public#about">
+    <a href="index.php#about">
         <button class="glow-on-hover" type="button">Retour</button>
     </a>
 
         <div class="write">
             <div class="haut">
-                <a href="../../public"><img class="logo "src="assets/images/img/logo.png" alt="la Pyramide"></a>
+                <a href="index.php#about"><img class="logo "src="assets/images/img/logo.png" alt="la Pyramide"></a>
                 <p>L'association La Pyramide, créée le 8 septembre 2021 a pour principaux objectifs de créer des ponts de communication entre les différents acteurs
                     et usagers du quartier d'Hilard Laval et d'ainsi contribuer à l'insertion sociale du plus grand nombre. L'association a été fondée par 3 habitants
                     du quartier d'Hilard, et repose sur 3 projets de tond
@@ -46,7 +46,7 @@
                     <th>
                     <div class="droite">
                         <!-- <img src="" alt="triangle jaune"> -->
-                        <p>Entin. nous aimerions initier les jeunes au monde du numérique. Secteur en plein essor.
+                        <p>Enfin, nous aimerions initier les jeunes au monde du numérique. Secteur en plein essor.
                         </p>
                     </div>
                     </th>
