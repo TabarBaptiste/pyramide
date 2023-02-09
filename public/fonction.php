@@ -352,6 +352,14 @@ function idUser($id){
     $prep->execute();
     return $prep->fetch();
 }
+function idNewsletter($id){
+    global $pdo;
+    $query = 'SELECT * FROM newsletters WHERE id=:id';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id', $id);
+    $prep->execute();
+    return $prep->fetch();
+}
 
 function creatNewsletter($param){
     global $pdo;

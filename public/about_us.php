@@ -66,7 +66,7 @@
                             et usagers du quartier d'Hilard Laval et d'ainsi contribuer à l'insertion sociale du plus grand nombre. 
                             <br><br>
                             L'association a été fondée par 3 habitants
-                            du quartier d'Hilard, et repose sur 3 projets de tond
+                            du quartier d'Hilard, et repose sur 3 projets de fond
                         </p>
                     </div>
                     <div class="col-md-12">

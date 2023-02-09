@@ -69,7 +69,7 @@
                                     
                                     if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
                                         echo '<li><a href="info_profil.php">'.$_SESSION['prenom'].'</a></li>';
-                                        echo '<li><a href="logout.php">Se déconnecter</a></li>';
+                                        echo '<li><a href="logout.php" onclick="return confirm("Vous vous déconnecter ?");">Se déconnecter</a></li>';
                                         if ($_SESSION['role']=='ROLE_ADMIN'){
                                             echo '<li><a href="listeUser.php">Afficher users</a></li>';
                                             echo '<li><a href="listeEvents.php">Afficher events</a></li>';

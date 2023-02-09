@@ -35,10 +35,12 @@
                             </div>
                         </form>
                         <?php
-                        if ($_SESSION['role']=='ROLE_ADMIN') {
-                            echo '<div style="text-align: center;">
-                                <a href="form_newsletter.php"><button id="form-submit" class="main-button">Créer</button></a>
-                            </div>';
+                        if (isset($_SESSION['id'])) {
+                            if ($_SESSION['role']=='ROLE_ADMIN') {
+                                echo '<div style="text-align: center;">
+                                    <a href="form_newsletter.php"><button id="form-submit" class="main-button">Créer</button></a>
+                                </div>';
+                            }
                         }
                         ?>
                         </div>

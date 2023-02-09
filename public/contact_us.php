@@ -1,6 +1,14 @@
 <!-- ***** Contact Us Area Starts ***** -->
 <head>
   <link rel="stylesheet" href="../css/0contact_us.css">
+  <?php
+    require_once 'fonction.php'; 
+
+    if (isset($_SESSION['id'])) {
+        $id_user = $_SESSION['id'];
+        $user = idUser($id_user);
+    }
+?>
 </head>
 
 <section class="section" id="contact-us">
@@ -27,12 +35,12 @@
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Nom *" required="">
+                                <input name="name" type="text" id="name" value='<?php if (isset($_SESSION['id'])) { echo $user->nom; }?>' placeholder="Nom *" required="" oninput="this.value = this.value.toUpperCase();">
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="firstName" type="text" id="firstName" placeholder="Prénom *" required="">
+                                <input name="firstName" type="text" id="firstName" value='<?php if (isset($_SESSION['id'])) { echo $user->prenom; }?>' placeholder="Prénom *" required="" required oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
                               </fieldset>
                             </div>
                             <!-- <div class="col-md-6 col-sm-12">
@@ -42,7 +50,7 @@
                             </div> -->
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="email" type="email" id="email" placeholder="E-mail *" required="">
+                                <input name="email" type="email" id="email" value='<?php if (isset($_SESSION['id'])) { echo $user->email; }?>' placeholder="E-mail *" required="">
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">

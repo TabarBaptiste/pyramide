@@ -19,7 +19,7 @@
                 <a href="index.php#about"><img class="logo "src="assets/images/img/logo.png" alt="la Pyramide"></a>
                 <p>L'association La Pyramide, créée le 8 septembre 2021 a pour principaux objectifs de créer des ponts de communication entre les différents acteurs
                     et usagers du quartier d'Hilard Laval et d'ainsi contribuer à l'insertion sociale du plus grand nombre. L'association a été fondée par 3 habitants
-                    du quartier d'Hilard, et repose sur 3 projets de tond
+                    du quartier d'Hilard, et repose sur 3 projets de fond
                 </p>
             </div>
 
@@ -56,7 +56,7 @@
 
             <div class="bas">
                 <!-- <b> -->
-                <p class="gras">Chacune de ces missions ont pour nous une importance primordiale, nous ne sommes pas attachés à respecter l' ordre chronologique énoncé.</p>
+                <p class="gras">Chacune de ces missions ont pour nous une importance primordiale, nous ne sommes pas attachés à respecter l'ordre chronologique énoncé.</p>
                     <h3>LE LOGO</h3>
                 <p title="Une Installation en forme de Pyramide culmine au centre du quartier d'Hifard, endroit Où l'on se retrouve depuis tout jeune">
                     Le 3, c'est notre chiffre. 3 fondateurs, 3 grands axes, 3 formes géométriques rassemblés autour d'une pyramide, voici le point de départ de notre projet !
@@ -64,10 +64,10 @@
                 <p class="commentaire">Une Installation en forme de Pyramide culmine au centre du quartier d'Hifard, endroit Où l'on se retrouve depuis tout jeune</p>
                 <!-- </b> -->
                 <p class="middle">
-                    Le rond. le carré et le triangle Sont des formes brutes à partir desquelles pouvons tout créer. Notre Choix colorimétrique Se jusitifie par le fait que le rouge, le jaune et le bleu sont des couleurs primaires, elles sont donc brutes. Enfin, la pyramide symbolisée par un triangle représente le cœur de notre logo, de notre quartier et de notre projet !
+                    Le rond, le carré et le triangle sont des formes brutes à partir desquelles pouvons tout créer. Notre Choix colorimétrique se jusitifie par le fait que le rouge, le jaune et le bleu sont des couleurs primaires, elles sont donc brutes. Enfin, la pyramide symbolisée par un triangle représente le cœur de notre logo, de notre quartier et de notre projet !
                 </p>
                 <p class="footer">
-                    Nous tenions à donner du Sens à notre identité...
+                    Nous tenions à donner du sens à notre identité...
                 </p>
             </div>
             <!-- <img class="img_fin" src="" alt="trois formes"> -->

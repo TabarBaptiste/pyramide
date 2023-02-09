@@ -4,15 +4,7 @@
         <?php 
         session_start();
         require_once 'fonction.php';
-        //print_r($_POST);
         $newsletters = afficheNewsletters();
-
-        /*if (isset($_POST['update'])){
-            updateNewsletters($_POST);
-        }
-        if ( (isset($_POST['update']))){
-            header('Location: listeEvents.php');
-        }*/
         ?>
     </head>
 
@@ -58,7 +50,7 @@
                     } else {
                         echo "Oui";} ?> </td>
                     <td>
-                        <a href="updateEvents.php?id=<?php echo $newsl->id ?>"><button type="button">Modifier</button></a>
+                        <a href="updateNewsletters.php?id=<?php echo $newsl->id ?>"><button type="button">Modifier</button></a>
                     </td>
                     <td>
                         <a href="envoieNews.php?id=<?php echo $newsl->id ?>"><button type="button">Envoyer</button></a>

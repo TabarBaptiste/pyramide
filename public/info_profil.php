@@ -32,7 +32,7 @@ if(!empty($_SESSION['id'])) {
             ?>
         </ul>
         <a href="delete_profil.php?delete=<?php echo $user['id']?>"
-        onClick="return(confirm('Êtes-vous sûr de vouloir supprimer votre compte ?'));"><button class="rouge" type="button">Supprimer mon compte</button></a>
+        onClick="return(confirm('Êtes-vous sûr de vouloir supprimer votre compte ?'));"><button class="supp-button" type="button">Supprimer mon compte</button></a>
         </form>
 
         <?php
@@ -116,5 +116,22 @@ input[type="submit"]:hover {
 
 .card-button:hover {
     background-color: #3e8e41;
+}
+
+.supp-button{
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.supp-button:hover {
+    background-color: #DC143C;
 }
 </style>
