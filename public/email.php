@@ -1,6 +1,6 @@
-<?php 
-require_once 'fonction.php'; 
-if (isset($_POST['ajout'])){
+<?php
+require_once 'fonction.php';
+if (isset($_POST['ajout'])) {
     ajoutUser($_POST);
     print_r($_POST);
 
@@ -14,5 +14,5 @@ if (isset($_POST['ajout'])){
         print_r($_POST);
         ?>
     </div>
-    <?php //unset($_SESSION['flash']); ?>
+<?php //unset($_SESSION['flash']); ?>
 <?php endif; ?>

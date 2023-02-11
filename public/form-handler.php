@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   mail($to, $subject, $message, $headers);
 
   echo 'Votre message a bien été envoyé.';
-}else{
+} else {
   error_log("Il y a une erreur!", 1);
 }
-header ('Location: index.php#contact-us')
-?>
+header('Location: index.php#contact-us')
+  ?>

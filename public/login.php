@@ -3,13 +3,12 @@ require_once('fonction.php');
 
 // Vérification des données du formulaire
 if (isset($_POST['email']) && isset($_POST['password'])) {
-    if (!empty($_POST['email'])&& !empty($_POST['password'])) {
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
         // Validation de l'email
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             header('Location: authentification.php');
             exit;
-        }
-        else {
+        } else {
             // Appel de la fonction getAuthentification pour vérifier les informations d'authentification
             $result = getAuthentification($_POST['email'], $_POST['password']);
 
@@ -35,14 +34,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 exit;
             }
         }
-    }
-    else {
+    } else {
         // Redirection vers la page d'authentification en cas d'erreur
         header('Location: authentification.php');
         exit;
     }
-}
-else {
+} else {
     // Redirection vers la page d'authentification en cas d'erreur
     header('Location: authentification.php');
     exit;

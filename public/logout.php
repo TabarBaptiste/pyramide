@@ -1,10 +1,10 @@
 <?php
 // On récupère la session
-session_start ();
+session_start();
 // On détruit les variables de notre session
-session_unset ();
+session_unset();
 // On détruit notre session
-session_destroy ();
+session_destroy();
 // On redirige le visiteur vers la page d'accueil
-header ('location: authentificationPays.php');
-?> 
+header('location: authentificationPays.php');
+?>

@@ -1,0 +1,17 @@
+= README pour La Pyramide
+
+== Présentation
+
+La Pyramide est une association à but non lucratif visant à initier les gens aux métiers du numérique et à protéger l’environnement, ainsi qu’à organiser des événements sportifs et culturels.
+
+== Objectifs du site
+
+Le site Web de l’association La Pyramide a pour but de permettre aux utilisateurs de s’informer sur les événements de l’association, de se connecter à leur compte, de créer un nouveau compte, de s’inscrire à des événements, de s’inscrire à une newsletter, de consulter les événements auxquels ils sont inscrits et de nous contacter.
+
+== Technologie
+
+Le site Web de La Pyramide est développé en utilisant les technologies PHP, CSS et JavaScript.
+
+== Développeurs
+
+Le site Web de La Pyramide est développé par TABAR LABONNE Baptiste et LAROUI Chakib.

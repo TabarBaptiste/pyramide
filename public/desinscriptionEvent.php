@@ -5,7 +5,7 @@ session_start();
 $userId = $_SESSION['id'];
 $eventId = $_GET['event_id'];
 
-if(!empty($userId) && !empty($eventId)) {
+if (!empty($userId) && !empty($eventId)) {
     unsubscribeEvent($userId, $eventId);
     header('Location: info_profil.php');
 } else {
@@ -13,4 +13,3 @@ if(!empty($userId) && !empty($eventId)) {
     //header('Location: events.php');
 }
 ?>
-
