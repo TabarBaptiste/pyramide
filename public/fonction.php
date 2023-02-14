@@ -434,3 +434,14 @@ function eventsByUser($user_id){
     $prep->execute();
     return $prep->fetchAll();
 }
+
+function usersByEvent($event_id){
+    global $pdo;
+    $query = 'SELECT * FROM events_users LEFT 
+              JOIN users ON events_users.user_id = users.id 
+              WHERE event_id=:event_id';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':event_id', $event_id);
+    $prep->execute();
+    return $prep->fetchAll();
+}

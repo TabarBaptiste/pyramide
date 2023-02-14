@@ -6,14 +6,13 @@
     session_start();
     require_once 'fonction.php';
     //print_r($_POST);
-    $events = affichEvents();
 
-    if (isset($_POST['update'])) {
-        updateEvents($_POST);
+    if (isset($_GET['id'])) {
+        $event_id = $_GET['id'];
+        $event = idEvents($event_id);
+        $users = usersByEvent($event_id);
     }
-    if ((isset($_POST['update']))) {
-        header('Location: listeEvents.php');
-    }
+    
     ?>
 </head>
 
@@ -21,46 +20,31 @@
     <div class="container">
         <table class="table table-bordered table-dark">
             <h1>
-                <?php echo $_SESSION['prenom'] ?> voici la liste des évenements
-            </h1>
+            <?php echo $_SESSION['prenom'] ?> voici la liste des évènements auxquels <?php echo $event->nom; ?> est inscrit            </h1>
             <div style="text-align: center; margin-top: 10px;">
                 <a href="index.php" class="btn btn-primary">Retour</a>
             </div>
             <tr>
-                <th>id</th>
                 <th>Nom</th>
                 <th>Type</th>
                 <th>Date</th>
-                <th>Nombre inscrit</th>
-                <th>Update</th>
             </tr>
-            <?php foreach ($events as $ev): ?>
-                <tr>
+            <?php foreach ($users as $us): ?>
+                <tr>    
                     <td>
-                        <?php echo $ev->id ?>
+                        <?php echo $us->nom ?>
                     </td>
                     <td>
-                        <?php echo $ev->nom ?>
+                        <?php echo $us->prenom ?>
                     </td>
                     <td>
-                        <?php echo $ev->type ?>
-                    </td>
-                    <td>
-                        <?php echo $ev->date ?>
-                    </td>
-                    <td>
-                        <a href="usersByEvents.php?id=<?php echo $ev->id ?>" alt="usersByEvents"><?php echo $ev->nb_inscrit ?></a>
-                    </td>
-                    <td>
-                        <a href="updateEvents.php?id=<?php echo $ev->id ?>"><button type="button">Modifier</button></a>
+                        <?php echo $us->email ?>
                     </td>
                 </tr>
             <?php endforeach ?>
         </table>
     </div>
 </body>
-
-</html>
 
 <style>
     body {
