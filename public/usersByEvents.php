@@ -20,9 +20,10 @@
     <div class="container">
         <table class="table table-bordered table-dark">
             <h1>
-            <?php echo $_SESSION['prenom'] ?> voici la liste des évènements auxquels <?php echo $event->nom; ?> est inscrit            </h1>
+                <?php echo $_SESSION['prenom'] ?> voici la liste des utilisateurs inscrit à <?php echo $event->nom; ?>
+            </h1>
             <div style="text-align: center; margin-top: 10px;">
-                <a href="index.php" class="btn btn-primary">Retour</a>
+                <a href="listeEvents.php" class="btn btn-primary">Retour</a>
             </div>
             <tr>
                 <th>Nom</th>

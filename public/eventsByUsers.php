@@ -22,7 +22,7 @@
             <h1>
             <?php echo $_SESSION['prenom'] ?> voici la liste des évènements auxquels <?php echo $user->prenom; ?> est inscrit            </h1>
             <div style="text-align: center; margin-top: 10px;">
-                <a href="index.php" class="btn btn-primary">Retour</a>
+                <a href="listeUser.php" class="btn btn-primary">Retour</a>
             </div>
             <tr>
                 <th>Nom</th>
