@@ -6,13 +6,12 @@
     session_start();
     require_once 'fonction.php';
     //print_r($_POST);
-    $users = affichUsers();
 
-    if (isset($_POST['update'])) {
-        updateUser($_POST);
-    }
-    if ((isset($_POST['update']))) {
-        header('Location: listeUser.php');
+    if (isset($_GET['id'])) {
+        $user_id = $_GET['id'];
+
+        $user = idUser($user_id);
+        $users = eventsByUser($user_id);
     }
     ?>
 </head>
@@ -21,42 +20,25 @@
     <div class="container">
         <table class="table table-bordered table-dark">
             <h1>
-                <?php echo $_SESSION['prenom'] ?> voici la liste des utilisateurs
-            </h1>
+            <?php echo $_SESSION['prenom'] ?> voici la liste des évènements auxquels <?php echo $user->prenom; ?> est inscrit            </h1>
             <div style="text-align: center; margin-top: 10px;">
                 <a href="index.php" class="btn btn-primary">Retour</a>
             </div>
             <tr>
-                <th>id</th>
                 <th>Nom</th>
-                <th>Prénom</th>
-                <th>email</th>
-                <th>Role</th>
-                <th>nb évents</th>
-                <th>Update</th>
+                <th>Type</th>
+                <th>Date</th>
             </tr>
             <?php foreach ($users as $us): ?>
                 <tr>
                     <td>
-                        <?php echo $us->id ?>
-                    </td>
-                    <td>
                         <?php echo $us->nom ?>
                     </td>
                     <td>
-                        <?php echo $us->prenom ?>
+                        <?php echo $us->type ?>
                     </td>
                     <td>
-                        <?php echo $us->email ?>
-                    </td>
-                    <td>
-                        <?php echo $us->role ?>
-                    </td>
-                    <td>
-                        <a href="eventsByUsers.php?id=<?php echo $us->id ?>" alt="eventsByUsers"><?php echo $us->nb_events ?></a>
-                    </td>
-                    <td>
-                        <a href="updateUser.php?id=<?php echo $us->id ?>"><button type="button">Modifier</button></a>
+                        <?php echo $us->date ?>
                     </td>
                 </tr>
             <?php endforeach ?>

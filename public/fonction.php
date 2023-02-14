@@ -344,14 +344,22 @@ function updateUser($param){
     }
 }
 
-function idUser($id){
+function idUser($id = null){
+    if ($id === null){
+        return false;
+    }
     global $pdo;
     $query = 'SELECT * FROM users WHERE id=:id';
     $prep = $pdo->prepare($query);
     $prep->bindValue(':id', $id);
     $prep->execute();
-    return $prep->fetch();
+    $result = $prep->fetch();
+    if ($result === false){
+        return false;
+    }
+    return $result;
 }
+
 function idNewsletter($id){
     global $pdo;
     $query = 'SELECT * FROM newsletters WHERE id=:id';
@@ -412,4 +420,17 @@ function afficheNewsletters() {
         return $prep->fetchAll();
     }
     return false;
+}
+
+function eventsByUser($user_id){
+    global $pdo;
+    $query = 'SELECT events.nom, events.type, events.date
+              FROM events
+              JOIN events_users ON events.id = events_users.event_id
+              JOIN users ON users.id = events_users.user_id
+              WHERE users.id = :user_id';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':user_id', $user_id);
+    $prep->execute();
+    return $prep->fetchAll();
 }
