@@ -24,7 +24,7 @@
           <div>
             <ul class="contact-info">
               <li><img src="assets/images/img/contact-info-01.png" alt="numéro"><a class="lien"
-                  href="tel:+33 7 81 72 86 16">07 81 72 86 16</li>
+                  href="tel:+33 7 63 48 62 78">07 63 48 62 78</li>
               <li><img src="assets/images/img/contact-info-02.png" alt="e-mail"><a class="lien"
                   href="mailto:rjweb53@gmail.com">rjweb53@gmail.com</a></li>
               <li><img src="assets/images/img/contact-info-03.png" alt="GYMNASE RENÉ LECOZ" target="_blank"><a
