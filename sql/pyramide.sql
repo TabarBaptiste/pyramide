@@ -26,10 +26,10 @@ CREATE TABLE IF NOT EXISTS `events` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table lapyramide_php.events : ~0 rows (environ)
+-- Listage des données de la table lapyramide_php.events : ~2 rows (environ)
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
 INSERT INTO `events` (`id`, `nom`, `type`, `date`, `nb_inscrit`) VALUES
-	(1, 'Futsal', 'Sport', '2023-01-30', 2),
+	(1, 'Futsal', 'Sport', '2023-01-30', 4),
 	(2, 'Ramassage Ordure', 'Environnement', '2023-03-15', 2);
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 
@@ -43,15 +43,17 @@ CREATE TABLE IF NOT EXISTS `events_users` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `events_users_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`),
   CONSTRAINT `events_users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table lapyramide_php.events_users : ~4 rows (environ)
+-- Listage des données de la table lapyramide_php.events_users : ~6 rows (environ)
 /*!40000 ALTER TABLE `events_users` DISABLE KEYS */;
 INSERT INTO `events_users` (`id`, `event_id`, `user_id`) VALUES
 	(23, 1, 28),
 	(43, 2, 27),
 	(44, 2, 29),
-	(45, 1, 27);
+	(45, 1, 27),
+	(46, 1, 30),
+	(47, 1, 32);
 /*!40000 ALTER TABLE `events_users` ENABLE KEYS */;
 
 -- Listage de la structure de la table lapyramide_php. messages
@@ -79,9 +81,9 @@ CREATE TABLE IF NOT EXISTS `newsletters` (
   `created_at` datetime NOT NULL,
   `is_sent` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table lapyramide_php.newsletters : ~0 rows (environ)
+-- Listage des données de la table lapyramide_php.newsletters : ~1 rows (environ)
 /*!40000 ALTER TABLE `newsletters` DISABLE KEYS */;
 INSERT INTO `newsletters` (`id`, `nom`, `content`, `created_at`, `is_sent`) VALUES
 	(1, 'Test', 'Test de newsletter', '2023-02-06 22:20:24', 0);
@@ -114,15 +116,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `nb_events` int(11) NOT NULL DEFAULT '0',
   `newsletter` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table lapyramide_php.users : ~3 rows (environ)
+-- Listage des données de la table lapyramide_php.users : ~7 rows (environ)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `nom`, `prenom`, `password`, `email`, `role`, `nb_events`, `newsletter`) VALUES
 	(1, 'TABAR LABONNE', 'Baptiste', 'azerty', 'baptiste97296@gmail.com', 'ROLE_USER', 0, 1),
 	(27, 'TABAR LABONNE', 'Baptiste', '$2y$10$BIbTx1NnL/Q1DxNNp0BTrOmwMprShZfB5oCe5W68m1g/Xi.uS.s5q', 'baptiste9729@gmail.com', 'ROLE_ADMIN', 2, 1),
 	(28, 'TAB', 'Baptiste', '$2y$10$c9oeEDF30k/YJI7rZBnAo.f5eIBZVJ9vkPDM7Ngx8CZ7JVadvVeHa', 'baptiste@gmail.com', 'ROLE_USER', 1, 0),
-	(29, 'LAROUI', 'Chakib', '$2y$10$ryhNLeMh0HxDaMlOfUMvYe.iTdDGAt0G7DpUy9AabntYferrRmg06', 'chakib@gmail.fr', 'ROLE_USER', 1, 0);
+	(29, 'LAROUI', 'Chakib', '$2y$10$ryhNLeMh0HxDaMlOfUMvYe.iTdDGAt0G7DpUy9AabntYferrRmg06', 'chakib@gmail.fr', 'ROLE_USER', 1, 0),
+	(30, 'LAROUSSI', 'Reda', '$2y$10$jMXXiYJWjEGGVqbLA.PfGeStKP3D0uYW/My2EkJ4RzsoZFZVP9B.C', 'reda.laroussi.sio@gmail.com', 'ROLE_USER', 1, 0),
+	(31, 'TABAR LABONNE', 'Baptiste', '$2y$10$ydAHRfWctvMal3Va8a5Dw.6F.hcDB8Z2s4m2OQX9LS5Q6KL9KUufS', 'baptiste97296@yopmail.com', 'ROLE_USER', 0, 0),
+	(32, 'TABAR LABONNE', 'Baptiste', '$2y$10$/JHHcHeTP3Val0pgTRewBusa1Fj/1ZmYjJtx9pNim4TuBkDPlDX5S', 'baptiste97@gmail.com', 'ROLE_USER', 1, 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

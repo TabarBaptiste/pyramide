@@ -22,13 +22,12 @@
             <h2>N'hésitez pas à rester en contact avec nous !</h2>
           </div>
           <div>
-            <ul class="contact-info">
-              <li><img src="assets/images/img/contact-info-01.png" alt="numéro"><a class="lien"
-                  href="tel:+33 7 63 48 62 78">07 63 48 62 78</li>
-              <li><img src="assets/images/img/contact-info-02.png" alt="e-mail"><a class="lien"
-                  href="mailto:rjweb53@gmail.com">rjweb53@gmail.com</a></li>
-              <li><img src="assets/images/img/contact-info-03.png" alt="GYMNASE RENÉ LECOZ" target="_blank"><a
-                  class="lien" href="https://goo.gl/maps/pCsqgSvrtx3hoW5E7">GYMNASE RENÉ LECOZ</a></li>
+            <li><img src="assets/images/img/contact-info-01.png" alt="numéro"><a class="lien"
+                href="tel:+33 7 63 48 62 78">07 63 48 62 78</a></li>
+            <li><img src="assets/images/img/contact-info-02.png" alt="e-mail"><a class="lien"
+                href="mailto:rjweb53@gmail.com">rjweb53@gmail.com</a></li>
+            <li><img src="assets/images/img/contact-info-03.png" alt="GYMNASE RENÉ LECOZ" target="_blank"><a
+                class="lien" href="https://goo.gl/maps/pCsqgSvrtx3hoW5E7">GYMNASE RENÉ LECOZ</a></li>
             </ul>
           </div>
         </div>
@@ -39,20 +38,16 @@
             <div class="row">
               <div class="col-md-6 col-sm-12">
                 <fieldset>
-                  <input name="name" type="text" id="name"
-                    value='<?php if (isset($_SESSION['id'])) {
-                      echo $user->nom;
-                    } ?>' placeholder="Nom *" required=""
-                    oninput="this.value = this.value.toUpperCase();">
+                  <input name="name" type="text" id="name" value='<?php if (isset($_SESSION['id'])) {
+                    echo $user->nom;
+                  } ?>' placeholder="Nom *" required="" oninput="this.value = this.value.toUpperCase();">
                 </fieldset>
               </div>
               <div class="col-md-6 col-sm-12">
                 <fieldset>
-                  <input name="firstName" type="text" id="firstName"
-                    value='<?php if (isset($_SESSION['id'])) {
-                      echo $user->prenom;
-                    } ?>' placeholder="Prénom *"
-                    required="" required
+                  <input name="firstName" type="text" id="firstName" value='<?php if (isset($_SESSION['id'])) {
+                    echo $user->prenom;
+                  } ?>' placeholder="Prénom *" required="" required
                     oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
                 </fieldset>
               </div>
@@ -63,11 +58,9 @@
                             </div> -->
               <div class="col-md-6 col-sm-12">
                 <fieldset>
-                  <input name="email" type="email" id="email"
-                    value='<?php if (isset($_SESSION['id'])) {
-                      echo $user->email;
-                    } ?>' placeholder="E-mail *"
-                    required="">
+                  <input name="email" type="email" id="email" value='<?php if (isset($_SESSION['id'])) {
+                    echo $user->email;
+                  } ?>' placeholder="E-mail *" required="">
                 </fieldset>
               </div>
               <div class="col-md-6 col-sm-12">
